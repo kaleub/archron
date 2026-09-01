@@ -1,8 +1,10 @@
 # archron
 An archive, digital scrapbook, and collection of artifacts.
 
-## Commands
+# mental model
+astro framework > github > netlify deployment automated / synced to main branch
 
+## Commands
 All commands are run from the root of the project, from a terminal:
 
 | Command                   | Action                                           |
