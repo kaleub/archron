@@ -66,6 +66,43 @@
   --mono-text: var(--font-family-secondary);
 }
 
+/*responsive framework breakpoints*/
+@media screen and (min-width: 1920px){
+html {
+    font-size: 18px;
+    }
+}
+@media screen and (min-width: 1440px) and (max-width: 1919px){
+html {
+    font-size: 18px;
+    }
+}
+@media screen and (min-width: 1280px) and (max-width: 1439px){
+html {
+    font-size: 18px;
+    }
+}
+/*webflow center breakpoint*/
+@media screen and (min-width: 992px) and (max-width: 1279px){
+html {
+    font-size: 16px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 991px){
+html {
+    font-size: 14px;
+    }
+}
+@media screen and (min-width: 480px) and (max-width: 767px){
+html {
+    font-size: 12px;
+    }
+}
+@media screen and (max-width: 479px){
+html {
+    font-size: 12px;
+    }
+}
 
 body {
   background-color: var(--canvas-subtle);
@@ -78,7 +115,7 @@ body {
 
 h1 {
   font-family: var(--headings), system-ui, sans-serif;
-  font-size: 3.5rem;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 1.2em;
 }
@@ -156,40 +193,38 @@ blockquote {
 }
 
 
-.section {
-  grid-column-gap: 2rem;
-  grid-row-gap: 2rem;
-  flex-flow: column;
-  padding: 8rem 6%;
+.section--base {
   display: flex;
+  flex-flow: column;
+  padding: 2rem 6%;
 }
 
-.container {
-  grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
+.container--base {
+  display: flex;
   flex-flow: column;
   width: 100%;
-  max-width: 1259px;
+  max-width: 1240px;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
 }
 
-.container.left {
+.container--base.--left {
   justify-content: flex-start;
   align-items: flex-start;
 }
 
-.container.right {
+.container--base.--right {
   justify-content: flex-start;
   align-items: flex-end;
 }
 
-.container.center {
+.container--base.--center {
   text-align: center;
   justify-content: flex-start;
   align-items: center;
 }
+
+/* ---------- cutoff ----------*/
 
 .display-1 {
   font-size: 5rem;
