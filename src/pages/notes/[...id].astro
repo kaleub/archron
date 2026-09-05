@@ -14,9 +14,24 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 <Layout title={post.data.title}>
-  <article>
-    <h1>{post.data.title}</h1>
-    <time>{post.data.date.toDateString()}</time>
-    <Content />
-  </article>
+  <section>
+
+    <div class="container--base --left">
+      <article>
+        <h1>{post.data.title}</h1>
+        <time>{post.data.date.toDateString()}</time>
+        <Content />
+      </article>
+      
+      <a href="#" class="button secondary">
+        <div class="button-text">Back</div>
+          <div class="button-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M6.5 5.5V7.5H15.09L5.5 17.09L6.91 18.5L16.5 8.91V17.5H18.5V5.5H6.5Z" fill="currentColor"></path>
+            </svg>
+          </div>
+      </a>
+
+    </div>
+  </section>
 </Layout>
