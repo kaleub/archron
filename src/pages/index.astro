@@ -16,7 +16,7 @@ const posts = (await getCollection('posts')).sort(
     <ul>
       {posts.map((post) => (
         <li>
-          <a href={`/notes/${post.id}`}>{post.data.title}</a>
+          <a href={`/notes/${post.id}`}>{post.data.title}</a>&nbsp;
           <time>{post.data.date.toDateString()}</time>
         </li>
       ))}
