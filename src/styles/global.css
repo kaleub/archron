@@ -28,13 +28,16 @@
 }
 
 /* PRIMITIVES */
-:root {
-  /* main */  
+:root {  
+  /*tailwind "stone"*/
+  --stone-500: #78716c;
+  --stone-400: #a8a29e;
+  --stone-300: #d6d3d1; 
   --stone-200: #e7e5e4;
+  
   --blue-700: #0045FF;  
   
-  /* utility, tailwind css ui colors "Neutral" */
-
+  /* tailwind "Neutral" */
   --neutral-950: #0a0a0a;
   --neutral-900: #171717;
   --neutral-800: #262626;
@@ -56,7 +59,8 @@
 /* SEMANTIC */
 :root {
   /* Colors in Use */  
-  --canvas: var(--stone-200);
+  --canvas: var(--stone-300);
+  --canvas-raised: var(--stone-200);
   --fg-text-primary: var(--neutral-950);
   --fg-text-secondary: var(--neutral-700);
   --fg-text-subtle: var(--neutral-400);
@@ -67,6 +71,21 @@
   --headings: var(--font-family-primary);
   --body-text: var(--font-family-primary);
   --mono-text: var(--font-family-secondary);
+
+  /*Utility Units*/
+  --line-height-buttons:   1.0em;
+  --line-height-headings:  1.2em;
+  --line-height-body-text: 1.5em;
+
+  --font-size-display-1: 2.0rem;
+  --font-size-display-2: 1.8rem;
+  --font-size-x-large:   1.6rem;
+  --font-size-large:     1.4rem;
+  --font-size-medium:    1.2rem;
+  --font-size-body:      1.0rem;
+  --font-size-small:     0.8rem;
+
+
 }
 
 /* BREAKPOINTS */
@@ -93,41 +112,41 @@ body {
   background-color: var(--canvas);
   color: var(--fg-text-primary);
   font-family: var(--body-text), system-ui, sans-serif;
-  font-size: 1rem;
+  font-size: var(--font-size-body);
   font-weight: 400;
-  line-height: 1.5em;
+  line-height: var(--line-height-body-text);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--headings), system-ui, sans-serif;
   font-weight: 400;
-  line-height: 1.2em;
+  line-height: var(--line-height-headings);
   letter-spacing: -4%;
 
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: var(--font-size-display-1);
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: var(--font-size-display-2);
 }
 
 h3 {
-  font-size: 1.6rem;
+  font-size: var(--font-size-x-large);
 }
 
 h4 {
-  font-size: 1.4rem;
+  font-size: var(--font-size-large);
 }
 
 h5 {
-  font-size: 1.2rem;
+  font-size: var(--font-size-medium);
 }
 
 h6 {
-  font-size: 1rem;
+  font-size: var(--font-size-small);
 }
 
 p {
@@ -140,8 +159,8 @@ a {
 
 ul, ol {
   margin-top: 0;
-  margin-bottom: 10px;
-  padding-left: 40px;
+  margin-bottom: .5rem;
+  padding-left: 32px;
 }
 
 img {
@@ -161,16 +180,19 @@ em {
 
 blockquote {
   border-left: 2px solid var(--fg-accent-primary);
-  margin-bottom: 10px;
-  padding: 10px 20px;
-  font-size: 18px;
-  line-height: 22px;
+  margin-bottom: .5rem;
+  padding: 16px 16px;
+  font-size: var(--font-size-medium);
+  line-height: var(--line-height-headings);
+}
+blockquote p {
+  margin-bottom: 2px !important;
 }
 
 time{
   color: var(--fg-text-subtle);
   font-family: var(--mono-text);
-  font-size: .8rem;
+  font-size: var(--font-size-small);
 }
 
 section {
@@ -184,6 +206,7 @@ section {
     padding-right: 24px;
   }
 }  
+
 
 .container--base {
   display: flex;
@@ -211,6 +234,25 @@ section {
   align-items: center;
 }
 
+.post--header{
+  margin-bottom: 2rem;
+}
+
+/* -------------- SCOPED FOR POST CONTENT ----------------- */
+.post--content {
+  h1, h2, h3, h4, h5, h6{
+      margin-bottom: 1rem;
+  }
+}
+
+.post--content {
+  p, blockquote {
+      margin-bottom: .5rem;
+  }
+}
+
+/* -------------- SCOPED FOR POST CONTENT ----------------- */
+
 
 
 /* ---------- udpated cutoff ----------*/
@@ -224,18 +266,18 @@ section {
 }
 
 .paragraph {
-  max-width: 960px;
+  max-width: 960px; /*null with container max width*/
 }
 
 .paragraph.large {
-  font-size: 1.5rem;
-  line-height: 1.5em;
+  font-size: var(--font-size-large);
+  line-height: var(--line-height-headings);
 }
 
 .function-text {
   letter-spacing: .05em;
   max-width: 960px;
-  font-size: .8rem;
+  font-size: var(--font-size-small);
   font-weight: 500;
 }
 
@@ -253,7 +295,7 @@ section {
   padding: 10px 16px;
   font-size: 12px;
   font-weight: 400;
-  line-height: 1em;
+  line-height: var(--line-height-buttons);
   text-decoration: none;
   display: flex;
   position: relative;
@@ -330,7 +372,7 @@ section {
 .card {
   grid-column-gap: .5rem;
   grid-row-gap: .5rem;
-  background-color: #fff;
+  background-color: var(--canvas-raised);
   border-radius: 8px;
   flex-direction: column;
   max-width: 1475px;
@@ -340,11 +382,6 @@ section {
   display: flex;
   position: relative;
   box-shadow: 0 1px 12px #0000001a;
-}
-
-.card.color {
-  background-color: var(--fg-accent-primary);
-  color: var(--neutral-000);
 }
 
 @media screen and (max-width: 767px) {
