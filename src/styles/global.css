@@ -30,21 +30,22 @@
 /* PRIMITIVES */
 :root {
   /* main */  
-  --ink-950: #0a0a0a;
+  --stone-200: #e7e5e4;
   --blue-700: #0045FF;  
   
-  /* utility, tailwind css ui colors "stone" */  
-  --neutral-950: #0c0a09;
-  --neutral-900: #1c1917;
-  --neutral-800: #292524;
-  --neutral-700: #44403c;
-  --neutral-600: #57534e;
-  --neutral-500: #78716c;
-  --neutral-400: #a8a29e;
-  --neutral-300: #d6d3d1;
-  --neutral-200: #e7e5e4;
-  --neutral-100: #f5f5f4;
-  --neutral-050: #fafaf9;
+  /* utility, tailwind css ui colors "Neutral" */
+
+  --neutral-950: #0a0a0a;
+  --neutral-900: #171717;
+  --neutral-800: #262626;
+  --neutral-700: #404040;
+  --neutral-600: #525252;
+  --neutral-500: #737373;
+  --neutral-400: #a3a3a3;
+  --neutral-300: #d4d4d4;
+  --neutral-200: #e5e5e5;
+  --neutral-100: #f5f5f5;
+  --neutral-050: #fafafa;
   --neutral-000: #ffffff; 
 
   --font-family-primary: 'Alte Haas Grotesk', system-ui, sans-serif;
@@ -55,8 +56,10 @@
 /* SEMANTIC */
 :root {
   /* Colors in Use */  
-  --canvas-subtle: var(--neutral-200);
-  --fg-text-primary: var(--ink-950);
+  --canvas: var(--stone-200);
+  --fg-text-primary: var(--neutral-950);
+  --fg-text-secondary: var(--neutral-700);
+  --fg-text-subtle: var(--neutral-400);
   --fg-accent-primary: var(--blue-700);
   
   
@@ -66,56 +69,17 @@
   --mono-text: var(--font-family-secondary);
 }
 
-/* RESPONSIVE BREAKPOINTS FRAMEWORK */
-
-
-@media screen and (min-width: 1920px){
-html {
-    font-size: 18px;
-    }
-}
-
-
-@media screen and (min-width: 1440px) and (max-width: 1919px){
-html {
-    font-size: 18px;
-    }
-}
-
-/* MEDIUM DESKTOP */
-@media screen and (min-width: 1280px) and (max-width: 1439px){
-html {
-    font-size: 18px;
-    }
-}
-
-/* SMALL DESKTOP */
-@media screen and (min-width: 992px) and (max-width: 1279px){
+/* BREAKPOINTS */
 html {
     font-size: 16px;
     }
-}
 
-/* TABLET */
-@media screen and (min-width: 768px) and (max-width: 991px){
-html {
-    font-size: 14px;
-    }
+@media screen and (max-width: 991px){
+  html {
+      font-size: 14px;
+      }
 }
-
-/* MEDIUM MOBILE */
-@media screen and (min-width: 480px) and (max-width: 767px){
-html {
-    font-size: 12px;
-    }
-}
-
-/* SMALL MOBILE */
-@media screen and (max-width: 479px){
-html {
-    font-size: 12px;
-    }
-}
+/* INSERT EXPANDED SCREEN SIZES BREAKPOINTS HERE TO REVISE IF NEEDED*/
 
 /* GLOBAL RESET */
 * {
@@ -126,7 +90,7 @@ html {
 
 
 body {
-  background-color: var(--canvas-subtle);
+  background-color: var(--canvas);
   color: var(--fg-text-primary);
   font-family: var(--body-text), system-ui, sans-serif;
   font-size: 1rem;
@@ -167,7 +131,7 @@ h6 {
 }
 
 p {
-  margin-bottom: 0; /*null with global reset, left as placeholder*/
+  color: var(--fg-text-secondary);
 }
 
 a {
@@ -181,7 +145,7 @@ ul, ol {
 }
 
 img {
-  border-radius: 4px;
+  border-radius: 2px;
   width: 100%;
   height: auto;
   display: inline-block;
@@ -196,13 +160,18 @@ em {
 }
 
 blockquote {
-  border-left: 4px solid var(--fg-accent-primary);
+  border-left: 2px solid var(--fg-accent-primary);
   margin-bottom: 10px;
   padding: 10px 20px;
   font-size: 18px;
   line-height: 22px;
 }
 
+time{
+  color: var(--fg-text-subtle);
+  font-family: var(--mono-text);
+  font-size: .8rem;
+}
 
 section {
   display: flex;
@@ -211,8 +180,8 @@ section {
 }
 @media screen and (max-width: 767px) {
   section {
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }  
 
