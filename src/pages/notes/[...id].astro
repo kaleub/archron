@@ -18,6 +18,7 @@ const { Content } = await render(post);
 
     <div class="container--base --left">
       <article>
+        <a href="/" class="post--navigation--link">← back</a>
         <div class="post--header">
         <h1>{post.data.title}</h1>
         <time>{post.data.date.toLocaleDateString('en-US', {

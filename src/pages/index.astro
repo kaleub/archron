@@ -11,13 +11,13 @@ const posts = (await getCollection('posts')).sort(
   <div class="container--base">
     <div>
       <h1>Archron</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p>An attempt to return to a more humanist internet and other esoteric bullshit.</p>
     </div>
     <ul>
       {posts.map((post) => (
-        <li>
+        <li class="home--list-item">
           <a href={`/notes/${post.id}`}>{post.data.title}</a>&nbsp;
-          <time>{post.data.date.toLocaleDateString('en-US', {
+          <time class="home--list-item--time">{post.data.date.toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'short',
             day: 'numeric',
