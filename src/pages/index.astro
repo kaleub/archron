@@ -6,11 +6,11 @@ const posts = (await getCollection('posts')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 ---
-<Layout title="Archron">
+<Layout title="field notes">
 <section>
   <div class="container--base">
     <div>
-      <h1>Archron</h1>
+      <h1 class="home--heading-1">field notes</h1>
       <p>An attempt to return to a more humanist internet and other esoteric bullshit.</p>
     </div>
     <ul>

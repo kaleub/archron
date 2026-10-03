@@ -214,9 +214,6 @@ hr {
 
 }
 
-
-
-
 time{
   color: var(--fg-text-subtle);
   font-family: var(--mono-text);
@@ -264,6 +261,10 @@ section {
 
 .post--header{
   margin-bottom: 2rem;
+}
+
+.home--heading-1{
+
 }
 
 .home--list-item{
