@@ -269,6 +269,8 @@ section {
 
 .home--list-item{
   margin-bottom: .2rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .home--list-item--time{
