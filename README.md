@@ -1,6 +1,7 @@
 # archron
 An archive, digital scrapbook, and collection of artifacts.
-
+codename: archron
+livename: feild-notes
 # mental model
 astro framework > github > netlify deployment automated / synced to main branch
 
